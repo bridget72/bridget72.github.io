@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title> COMP251 Jan22</title>
+</head>
+</body>
+
+<textarea name="a">
+
+
+#A Brief Review of Graph Theory
+* * *
+
+Topics:
+  
+* What is a Graph?
+  * Undirected Graphs
+  * Directed Graphs
+* Graph Representations
+  * Adjacency Matrix (undirected Graphs)
+  * Adjacency Matrix (directed Graphs)
+  * Adjacency Lists  (undirected Graphs)
+  * Adjacency Lists  (directed Graphs)
+  * Adjacency Lists vs. Adjancency Matices
+* Graph Applications
+* Some Theorems on Undirected Graphs
+
+    
+
+* * *
+## What is a graph?
+**Undirected Graphs** 
+
+An undirected graph G=(V,E) consists of:
+```
+-A set V of vertices(or nodes)
+-A set E of edges(or links) denoting the UNORDERED vertex pairs
+    //has to be symmetric
+```
+We set n=|V| to be the cardinality of the `vertex` set
+
+We set m=|E| to be the cardinality of the `edge` set
+
+
+**Directed Graphs** 
+
+An directed graph G=(V,E) consists of:
+```
+-A set V of vertices
+-A set A of arcs(directed edges) denoting the ORDERED vertex pairs
+    //does not have to be symmetric
+```
+We set n=|V| to be the cardinality of the `vertex` set
+
+We set m=|A| to be the cardinality of the `arc` set
+
+##Graph Representations
+
+**Adjacency Matrix (undirected Graphs)**
+
+For an undirected graph, an adjacency matrix M has the roperties that:
+```
+-There is a row for each vertex.
+-There is a column for each vertex.
+```
+The ij-th entry of the matrix is defined by:
+
+\\[
+M_{ij}=\begin{cases} 
+1  & \text{(i, j) $\in$ E }\\\\
+0  & \text{(i, j) $\notin$ E} 
+\end{cases} 
+\\]
+
+** Adjacency Matrix (directed Graphs) **
+
+For an directed graph, an adjacency matrix M has the roperties that:
+```
+-There is a row for each vertex.
+-There is a column for each vertex.
+```
+The ij-th entry of the matrix is defined by:
+
+\\[
+M_{ij}=\begin{cases} 
+1  & \text{(i, j) $\in$ A }\\\\
+0  & \text{(i, j) $\notin$ A} 
+\end{cases} 
+\\]
+
+** Adjacency Lists (undirected Graphs) **
+
+An undirected graph can also be stored using adjacency lists.
+```
+-For each vertex i, we store a list of the neighbours of i.
+-Equivalently, we store a list of the edges incident to each vertex.
+```
+`neighbours`: The set of vertices that i shares an edge with 
+
+** Adjacency Lists (directed Graphs) **
+
+An directed graph can also be stored using adjacency lists.
+```
+-For each vertex i, we store a list of the in-neighbours of i.
+-For each vertex i, we also store a list of the out-neighbours of i.
+
+```
+`in-neighbours`: The set of vertices with arcs that point to i.
+
+`out-neighbours`: The set of vertices that i has arcs pointing to.
+
+** Adjacency Lists vs. Adjancency Matices **
+
+The main difference is in the amount of STORAGE required
+
+
+* An adjacency matrix requires storing \\(\Theta(n^2)\\) numbers. 
+    //since the size is n by n
+* An adjacency lists requires storing \\(\Theta(m)\\)numbers.
+    //there are m arcs and each of, which will appear twice on each list
+
+In any graph, \\(m=O(n^2)\\) and often \\(m \ll n^2.\\)
+
+In `sparse` graphs, it is much more preferable to use adjacency lists.
+
+//There is other ways to store these graphs, you can use much more complicated data structures.
+But even then, theses lists are typically what you really want. In a lot of applications, 
+we don't really have the graph to begin with. But we can figure it out, like whether they are adjacent or
+if there is an edge between them as we go along. Like HTML
+
+##Graph Applications
+The number of practical applications for is extraodinarily large.
+
+Obviously there are useful in modelling networks.
+
+* Transportation Networks: Roads
+
+* Social Networks: Facebook Graph
+
+* Information Networks: the World Wide Web
+
+But, their flexibility allows them to model a plethora of diverse applications.
+
+* Hierarchy: data structures, liguistics
+
+* Similarity: data clustering, biology
+
+* Conflict: wavelength allocation, scheduling
+
+* Priority: industrial planning, operations research
+
+* Structure: chemistry, physics
+
+* Time Relations: evolution, migration patterns 
+
+## Graph Structures
+
+**Walks**
+
+A walk is a list of vertices, `{v0,v1,v2...,vl}` such that \\( (v\_i,v_{i+1} ) \in \\) E for all \\(0\le i \lt l\\).
+i.e every two consecutive vertices on the list share an edge
+
+**Circuits**
+
+A circuit is a walk, `{v0,v1,v2...,vl}` where \\( v_0 =v_l\\).
+It is a `closed walk` since you end up where you started. Notice that we can use the same vertex more than once.
+
+An `Eulerian Circuit` is a circuit that uses every edge exactly once.
+
+**Path**
+
+A path is a walk where every vertex is distinct.
+
+**Cycles**
+
+A cycle is a walk `{v0,v1,v2...,vl}` where every vertex is distinct except for the end-vertices \\(v_0=v_l\\).
+A cycle is a `closed` path.
+
+A `Hamiltonian Cycle` is a cycle that uses every vertex exactly once
+
+**Connected Graphs**
+
+A graph is connected if for every pair of vertices \\(u,v \in V\\) it is possible to walk from 
+\\(u\\) to \\(v\\).
+
+A graph is disconnected if there exists a pair of vertices \\(u,v \in V\\) for which there is no possible walk from
+\\(u\\) to \\(v\\).
+
+**Graph Components**
+
+A connnect subgraphs are called the components of the graph. Thus a connect graph has exactly one component.
+
+**Trees**
+
+A tree is a connect component with no cycles.
+
+A `forest` is a graph whose components are all trees.
+
+A tree is `spanning` if it contains evey vertex in the graph.
+
+**Matching**
+
+A matching is a set of vertex-disjoint edges. Hence, each vetex is incident to at most on edge in the matching.
+
+A mathching is `perfect` if every vertex is incident to an edge in the matching.
+
+**Cliques**
+
+A clique is a set of pairwise adjacent vertices.
+
+**Independent Sets**
+
+An idependent set (stable set) is a set of pairwise non-adjacent vertices.
+
+**Bipartite Graphs**
+
+In a bipartite graph the vertex set can be partitioned as \\(V=X \bigcup Y\\)
+such that evey edge has one end-vertex in \\(X\\) and one end-vertex in \\(Y\\).
+
+Note that X and Y are both indepent sets.
+
+##Some Theorems on Undirected Graphs
+
+**The Hand Shaking Lemma**
+
+
+Let \\( \Gamma (v) ={u:(u,v) \in E}\\) be the set of neighbours of v.
+The `degree`, \\(deg(v)\\), of a vertex \\(v\\) is the cardinality of \\( \Gamma (v) \\).
+```
+In an undirected graph, there are even number of vertices with odd degree.
+```
+*Proof*:
+
+* Double count the number of pairs (v,e) where e is an edge incident to v;
+
+* \\(O\\) is the set of vertices with odd degree, \\(\mathcal{E}\\) is set of vertices with even degree
+\\[
+2|E| =  \sum\_{v \in V} deg(v) =  \sum\_{v \in O}  deg(v) + \sum\_{v \in \mathcal{E} }  deg(v) \\\\
+\Rightarrow \sum\_{v \in O}  deg(v) = 2|E| - \sum\_{v \in \mathcal{E} }  deg(v)
+\\] 
+
+* 2|E| is obvisuly even, the sum of even numbers on the RHS sum is even. Therefore, the LHS is even.
+
+**A theorem on Circuits**
+
+
+Euler's Theorem, and is the first result in Graph Theory is the following:
+
+```
+An undirected graph contains an Euler Circuit if and only if evey vertex has even edge.
+```
+**A Theorem on Trees**
+
+A vertex with degree one in a tree is called a `leaf`.
+```
+Lemma: A tree T with n>=2 vertices has at least one leaf vertex.
+```
+*Proof*: 
+
+* A tree is connected. \\(\Rightarrow\\) There are NO vertices with degree 0 as \\(n \ge 2\\).
+
+* For a contradiction, assume that every vetex has degree at least 2.
+
+* Take the longest path `P={v1,v2...vl}` in \\(T\\)
+
+* But \\(deg(v\_l) \ge 2\\), so \\(v\_l\\) has a neighbour \\(x \ne v_{l-1}\\)
+
+* We must have \\(x = v_j\\) for some \\(1 \le j \le l-2\\) other wise `{v1,v2...vl,x}` is a longer path than P.
+
+* But then `C={v1,v2...vl,x}` is a cycle, contradiction.
+
+We can count the number of edges in a tree.
+```
+Theorem: A tree with n vertices has n-1 edges.
+```
+*Proof*: 
+
+* Basecase: A tree on one vertex has zero edges.
+
+* Induction Hypothesis: Assume that any tree on \\(n-1\\) vertices has \\(n-2\\) edges.
+
+* Induction Step: 
+  * Take a tree T with \\(n\ge 2\\) vertices
+  * By the previous lemma, this tree contains a leaf vertex \\(v\\)
+
+  \\(\Rightarrow \\) T\\(\backslash\\){v} is a tree on n-1 vertices.
+  
+  \\(\Rightarrow \\) By the induction hypothesis, T\\(\backslash\\){v} is a tree with n-2 edges. 
+
+**A theorem on Matchings**
+
+
+
+How do we know if a bipartite graph \\(G = (X \bigcup Y,E)\\) contains a perfect matching?
+
+This is actually easy to test using `Hall's Condition.`
+
+*Hall's Condition*: \\[\forall B \subseteq X , |\Gamma(B)| \ge |B|\\]
+
+i.e. Take the LHS vertices X, for any subset B, if the neighborhood of B is always at least as big as B.
+
+*Hall's Theorem*:
+```
+A bipartite graph, with |X|=|Y| contains a perfect matching if and only if Hall's condition is satisfied.
+```
+
+*Proof:*
+
+\\((\Rightarrow)\\)
+
+If there is an set \\( B\subseteq X\\) with \\(|\Gamma(B)| \lt |B|\\) then the graph cannot have a perfect matching.
+}
+
+\\((\Leftarrow)\\)
+
+* Suppose Hall's Condition is satisfied: \\(\forall B \subseteq X , |\Gamma(B)| \ge |B|\\)
+
+* Take a maximum cardinality matching M in the graph.
+  * If M is perfect we are done.
+  * So we may assume M is not perfect and there is an unmatched vertex \\(b_0\\) in X.
+    As Hall's Condition holds we have: \\(|\Gamma(b_0)| \ge |b_0| =1\\).
+    So \\(b_0\\) has at least one neighbour \\(s_0\\).
+  * Let \\(s_0\\) be matched to \\(b_1\\) in \\(M\\).
+    As Hall's Condition holds we have:\\(|\Gamma(b_0,b_1)| \ge |b_0,b_1| =2\\).
+    So either \\(b_0\\) or \\(b_1\\) has a neighbour \\(s_1 \ne s_0\\).
+  * Let \\(s_1\\) be matched to \\(b_2\\) in M.
+    By Hall's Condition, \\(|\Gamma(b_0,b_1,b_2)| \ge |b_0,b_1,b_2| =3\\).
+    So {\\(b_0,b_1,b_2\\)} has a neighbor \\(s_2 \ne\\) {\\( s_0,s_1\\)}.
+  * Let \\(s_2\\) be matched to \\(b_3\\) in M.
+    By Hall's Condition, \\(|\Gamma(b_0,b_1,b_2,b_3)| \ge |b_0,b_1,b_2,b_3| =4\\).
+    So {\\(b_0,b_1,b_2,b_3\\)} has a neighbor \\(s_3 \ne\\) {\\( s_0,s_1,s_2\\)}.
+  * Let \\(s_3\\) be matched to \\(b_4\\) in M,etc...
+  * The graph contains a finite number of nodes so this process must terminate.
+    The process can only terminate if we reach an unmatched node \\(s_k \in S\\).
+    Using the edges we have found we can trace back a path P from \\(s_k\\) to \\(b_0\\)
+    that alternates between using non-matching edges and matching edges.
+  * Swapping the matching and non-matching edges gives one extra matching edge.
+    Note this is still a valid matching. 
+    Firstly, the internal nodes of P are still incident to exactly one matching edge.
+    Secondly, its end-nodes, \\(s_k)\\) and \\(b_0\\), were previously unatched so are now incident to exactly one edge in the new matching.
+  * This contradicts the fact that M was a maximum cardinality matching.
+
+
+
+
+</textarea> 
+
+Copyright &copy; Bridget Liu
+
+<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+
+
+</body>
+
+</html>
+
+
