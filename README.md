@@ -1,1 +1,1 @@
-angular build from /personal-website
+angular build from /angular_website
