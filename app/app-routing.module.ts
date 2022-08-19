@@ -6,6 +6,12 @@ import {ResearchComponent} from './research/research.component';
 const routes: Routes = [
   {
     path:'',
+    component:HomeComponent
+    // since we have two blank paths now 
+    // pathMatch:'full'
+  },
+    {
+    path:'#',
     component:HomeComponent,
     // since we have two blank paths now 
     pathMatch:'full'
