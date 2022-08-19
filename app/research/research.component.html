@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>My research</title>
+        <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+        <!-- Bulma Version 0.9.0-->
+        <link rel='stylesheet prefetch' href='https://unpkg.com/bulma@0.9.0/css/bulma.min.css'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/15181efa86.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <section class="hero is-medium">
+            <nav class="navbar-end box0" role="navigation" aria-label="main navigation">
+                <div class="navbar box0">
+                    <div class="navbar-burger burger" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div  class="navbar-menu box0">
+                    <div class="navbar-end box0">
+                        <a class="navbar-item" routerLink="/">Home</a>
+                            <a class="navbar-item" href="../../assets/resume.pdf"title="Bridget Liu's Resume">Resume </a>
+                            <a class="navbar-item" routerLink="/research">Research</a>
+                            <a class="navbar-item" routerLink="/projects">Projects</a>
+                            <hr class="navbar-divider">
+                    </div>
+                </div>
+              </nav>
+              <div class="hero-body">
+                <div class="container">
+                    <h3 class="title is-1" style="text-align:left">
+                       Research
+                    </h3>
+                    <hr class="content-divider">
+                    <h4 class="subtitle">
+                        My research mainly involves image segmentation and anlysis on nervous tissue, for both light-microscopy and FIB-SEM level. <br>
+                        Instead of directly employ the recent deep learning algorithms, we go back to the traditional methods 
+                        that take intensity and shape into consideration more intuitively.
+                    </h4>                   
+                    <!-- <div class="columns is-multiline">
+                        <div class="column post is-6">
+                            <div [@openClose]="isOpen ? 'open' : 'closed'"
+                            (@openClose.start)="onAnimationEvent($event)"
+                            (@openClose.done)="onAnimationEvent($event)"
+                            class="hero">
+                            <button class="button" type="button" (click)="toggle()">
+                                But why not deep learning? 
+                             </button>
+                            </div>
+                        </div>
+                        <div class="column post is-6">
+                            <div [@openClose]="isOpen1 ? 'open' : 'closed'"
+                            (@openClose.start)="onAnimationEvent($event)"
+                            (@openClose.done)="onAnimationEvent($event)"
+                            class="hero">
+                            <button class="button is-ghost" type="button" (click)="toggle1()">
+                                But why not deep learning? 
+                                </button>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+        <section id="parallax-1" class="hero ">
+                      <div class="hero-foot">
+                          <nav class="tabs is-toggle is-centered is-active is-medium">
+                              <div class="container">
+                              <ul>
+                                  <li class="tab is-active" (click)="openTab($event, 'id_tab_1')"><a >Motivation</a></li>
+                                  <li class="tab" (click)="openTab($event, 'id_tab_2')"><a >Mitochondria </a></li>
+                                  <li class="tab" (click)="openTab($event, 'id_tab_2')"><a >Glycogen </a></li>
+                                  <li class="tab" (click)="openTab($event, 'id_tab_3')"><a >Blood Vessels</a></li>
+                              </ul>
+                              </div>
+   
+                          </nav>
+                      </div>
+        </section>
+        <section id="parallax-2" class="hero is-large ">
+            <div class = "box box1">
+                <div class="section">
+                    <div id="id_tab_1" class="content-tab">
+                        <h4 class="subtitle"><span class="icon is-small"><em class="fa fa-circle-o"></em></span>
+                            Why not using deep learning directly?</h4> 
+                        <div class="columns">
+                            <br/>
+                            <div class="column  is-offset-1">
+                                <p> High-quality training data is particularly hard to acquire in medical domain. <br>
+                                    For segmentation problem particulary, manaully labelling for the ground-truth is extremely time-consuming. <br>
+                                    Also, for a 3D volume, a trained expert needs to go back and forth in the nearby slices, checking if it is indeed the desired structure.
+                                </p> 
+                            </div>
+                            <br/>
+                        </div>
+                        <h4 class="subtitle">
+                            <span class="icon is-small"><em class="fa fa-check-circle-o"></em></span>
+                                Instead, we aim to generate training data using traditional computer vision methods. Then feed the output into neural networks.
+                        </h4> 
+                        <hr class="content-divider">
+                        <h3 class="subtitle">We use the active contour methods with level-set formulation. </h3> 
+                        
+                        
+                        <div class = "hero-body is-small"></div>
+                        
+                        <div class = "hero-body"></div>
+                    </div>
+                    <div id="id_tab_2" class="content-tab" style="display:none">
+                        <div class = "hero-body"></div>
+                        <div class = "hero-body"></div>
+                    </div>
+                    <div id="id_tab_3" class="content-tab" style="display:none">
+                        <div>
+                        2
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+   
+
+    </body>
+</html>

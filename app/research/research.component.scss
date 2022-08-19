@@ -1,0 +1,165 @@
+// $color0 :#F7FFDD;
+// $color1 :#FCFDAF;
+// $color2 :#EFD780;
+// $color3 :#DBA159;
+// $color4 :#D0E3CC;
+
+$color0 :#0FA3B1;
+$color1 :#FF9B42;
+$color2 :#F7A072;
+$color3 :#EDDEA4;
+$color4 :#F5E8CC;
+
+// https://coolors.co/76512e-cc970f-f2e0ba-b28324-dac3a8
+
+$button-text-color: white;
+$button-background-color: #6B955F;
+// $button-border-width: 10;
+$button-focus-color: black;
+$button-responsive-sizes: small;
+
+$tabs-link-color:white;
+$tabs-toggle-link-active-color:#936539;
+$tabs-link-hover-color:#FCF7EE;
+$tabs-toggle-link-radius: 0px;
+// $tabs-link-padding: 0.7em;
+$tabs-toggle-link-hover-background-color: #936539;
+$tabs-toggle-link-active-background-color: #FCF7EE;
+$tabs-toggle-link-active-border-color:white;
+$tabs-toggle-link-hover-border-color:white;
+// $tabs-toggle-link-hover-border-bottom-color: black;
+// $tabs-toggle-link-active-border-color: black;
+// $tabs-toggle-link-active-border-bottom-color:black;
+
+
+
+$divider-color: black;
+$divider-background-color:black;
+.link{
+  color: #167332;
+  font-weight: 600;
+  // background-color: $color2;
+}
+
+.va {
+  display: flex;
+  align-items: center;
+}
+
+.hero,
+.cta {
+  // background: url(data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20512%20512%22%20width%3D%22512%22%20height%3D%22512%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cfilter%20id%3D%22noise%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.875%22%20result%3D%22noise%22%20%2F%3E%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200.4296875%200%22%20%2F%3E%3C%2Ffilter%3E%3Crect%20filter%3D%22url%28%23noise%29%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22512%22%20height%3D%22512%22%20fill%3D%22transparent%22%20opacity%3D%221%22%20%2F%3E%3C%2Fsvg%3E), linear-gradient(52deg, #42475C 0%, #20222E 71%);
+//   background: url('../../assets/img/bg18.jpg');
+    background-color: $color4 ;
+}
+
+.cta {
+  height: 500px;
+  border-top: 10px solid $color4;
+}
+
+footer {
+  color: white;
+  background: rgb(14, 14, 14) !important;
+}
+
+footer strong {
+  color: turquoise;
+}
+
+footer a {
+  color: turquoise;
+}
+
+.bold {
+  color:  white;
+  font-weight: 800;
+  font-size: 1.3rem;
+  // font-family: 'Nunito Sans', sans-serif;
+  // text-shadow: 1px 1px 1px #fff, 3px 3px 5px;
+}
+
+.subtitle {
+  color: black;
+  font-size: 1.1rem;
+  // text-shadow: 1px 1px 1px #000, 3px 3px 5px rgb(0, 0, 3);
+}
+
+hr.content-divider {
+    background-color: #C6986C;
+  max-width: 75px;
+  height: 5px;
+}
+
+#parallax-1 {
+//   background: url('../../assets/img/bg18.jpg');
+  background-color: #936539 ;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top: 2px solid white;
+}
+
+#parallax-1 hr {
+  background: $color2;
+}
+
+#parallax-2 {
+  background: url('../../assets/img/bg25.jpg');
+//   background-color: white;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top: 2px solid white;
+}
+
+#parallax-2 hr {
+  background: #C6986C;
+}
+
+#parallax-3 hr {
+  background: $color0;
+}
+
+
+input {
+  background: transparent !important;
+  border: 1px solid $color0 !important;
+  color: black !important;
+}
+
+input::placeholder {
+  color: black !important;
+}
+
+$box-background-color: rgba(white, 0.5);
+
+
+.columns.is-vcentered {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+/* :host {
+    display: block;
+    margin-top: 1rem;
+  } */
+
+.open-close-container {
+    border: 1px solid #dddddd;
+    /* margin-top: 1em; */
+    padding: 20px 20px 0px 20px;
+    color: #000000;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+@import "../../../node_modules/bulma/bulma.sass"; 
+/*
+  Copyright Google LLC. All Rights Reserved.
+  Use of this source code is governed by an MIT-style license that
+  can be found in the LICENSE file at https://angular.io/license
+  */

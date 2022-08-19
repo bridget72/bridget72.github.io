@@ -1,0 +1,251 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Bridget Liu</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/15181efa86.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+</head>
+
+<!-- Portfolio -->
+  <section class="hero is-medium box1 ">
+    <!-- <section class = "box"> -->
+      <nav class="navbar-end box0" role="navigation" aria-label="main navigation">
+        <div class="navbar box0 ">
+            <div class="navbar-burger burger" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div  class="navbar-menu ">
+            <div class="navbar-end ">
+                <a class="navbar-item has-text-white" routerLink="/">Home</a>
+                    
+                    <a class="navbar-item has-text-white" href="../../assets/resume.pdf"title="Bridget Liu's Resume">Resume </a>
+                    <a class="navbar-item has-text-white" routerLink="/research">Research</a>
+                    <a class="navbar-item has-text-white" routerLink="/projects">Projects</a>
+              </div> 
+        </div>
+      </nav>
+
+      
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h3 class="title is-2 has-text-white">Projects</h3>
+        </div>
+      </div>
+
+      <section class="blog-posts">
+        <div class="container">
+          <div class="columns">
+            
+              <div class="column is-10 is-offset-1">
+                <div class="columns featured-post is-multiline">
+                  <div class="column is-12 post">
+                    <article class="columns featured">
+                      <div class="column is-7 post-img ">
+                        <video controls>
+                          <source src="../../assets/videos/lcp1.mp4" type="video/mp4">
+                        </video>
+                      </div>
+                      <div class="column is-5 featured-content va">
+                        <div>
+                          <h3 class="heading post-category">JAVA, OOP</h3>
+                          <h1 class="title post-title has-text-white">Rigid Body Animation</h1>
+                          <p class="post-excerpt">                          
+                            An optimization for collision and contact solvers to prevent rigid bodies from interpolating each other, 
+                            stablize the system as well as saving computational time. 
+                            <br>
+                            <br>
+                            In the video, letters are treated as a rigid bodies with weights.
+                            At the begining, they are dropping to the ground. 
+                            Then, every time a contact is detected we switch the color of related objects.
+                          </p>
+                          <!-- <br>
+                          <a href="#" class="button is-info">Read More</a> -->
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+
+              <hr>
+              <div class="columns is-multiline">
+                <div class="column post is-5">
+                  <article class="columns is-multiline">
+                    <div class="column is-12 post-img">
+                      <video height = 200 width = 400 controls>
+                        <source src="../../assets/videos/mujoco.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                    <div class="column is-12 featured-content ">
+                      <h3 class="heading post-category">Python, Reinforcement Learning</h3>
+                      <h1 class="title post-title has-text-white">Mujoco Agent Training </h1>
+                      <p class="post-excerpt">Trained several reinforcement learning algorithms for a continous task.
+                      <br>
+                      An actor-critic algorithm called TD3 outperforms the rest, video is showing the evaluation result for this agent. 
+                      </p>
+                        <br>
+                      <a href="https://colab.research.google.com/drive/1fRSB-AG4sGbTceNljjpZwIEYbruv6WCo?usp=sharing" class="button is-info">Link to code</a>
+                    </div>
+                  </article>
+                </div>
+                <div class="column post is-7">
+                  <article class="columns is-multiline">
+                    <div class="column is-12 post-img">
+                      <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
+                    </div>
+                    <div class="column is-12 featured-content ">
+                      <h3 class="heading post-category">Category Name</h3>
+                      <h1 class="title post-title">Slightly Longer Blog Post Title</h1>
+                      <p class="post-excerpt">
+
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus ratione harum eaque, animi nulla tempore quis, quam voluptatum.
+                      
+                      </p>
+                      <br>
+                      <a href="#" class="button is-primary">Read More</a>
+                    </div>
+                  </article>
+                </div>
+                
+                <div class="column post is-5">
+                  <article class="columns is-multiline">
+                    <div class="column is-12 post-img">
+                      <img src="../../assets/img/asl.png" alt="Featured Image">
+
+                    </div>
+                    <div class="column is-12 featured-content ">
+                      <h3 class="heading post-category">Python, Machine Learning, OpenCV</h3>
+                      <h1 class="title post-title has-text-white">Real-time Sign Language Interpreter</h1>
+                      <p class="post-excerpt">This was submitted to MAIS Hacks 2021. 
+                      <br>
+                      It's essentially an add-on for video-chats where captions with auto-correction are provided for sign language. </p>
+                      <br>
+                      <a href="https://devpost.com/software/livesigns" class="button is-info">Read More</a>
+                    </div>
+                  </article>
+                </div>
+                <div class="column post is-7">
+                  <article class="columns is-multiline">
+                    <div class="column is-12 post-img">
+                      <video  controls>
+                        <source src="../../assets/videos/ball.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                    <div class="column is-12 featured-content ">
+                      <h3 class="heading post-category">Unity</h3>
+                      <h1 class="title post-title has-text-white">Roll-a-ball</h1>
+                      <p class="post-excerpt">
+                        An attempt for learning Unity, added basic functionals like boosting pad, turret, health damage, respawn after death and scoring points.
+                      </p>
+                      <br>
+                      <!-- <a href="#" class="button is-primary">Read More</a> -->
+                    </div>
+                  </article>
+                </div>
+                
+
+                <div class="column post is-4">
+                  <article class="columns is-multiline">
+                    <div class="column is-12 post-img">
+                      <img src="../../assets/img/bg19.jpg" alt="Featured Image">
+                    </div>
+                    <div class="column is-12 featured-content ">
+                      <h3 class="heading post-category">Angular, HTML, SCSS, Javascript</h3>
+                      <h1 class="title post-title has-text-white">Personal website</h1>
+                      <p class="post-excerpt">
+                      This website is still under construction. <br>
+                      So far it's built following Angular tutorials online, and it's styled with Bulma. 
+                      
+
+                      </p>
+                      <br>
+                      <a href="https://github.com/bridget72/angular_website" class="button is-info">Github Repo</a>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="column post is-4">
+                  <article class="columns is-multiline">
+                    <div class="column is-12 post-img">
+                      <img src="../../assets/img/pano.png" alt="Featured Image">
+                    </div>
+                    <div class="column is-12 featured-content ">
+                      <h3 class="heading post-category">MATLAB, Computer Vision</h3>
+                      <h1 class="title post-title has-text-white">Panorama stitching</h1>
+                      <p class="post-excerpt">
+                      A simple stitching algorithm using SIFT-features and RANSAC with homographies.
+
+                      </p>
+                      <!-- <br>
+                      <a href="#" class="button is-info">Read More</a> -->
+                    </div>
+                  </article>
+                </div>
+
+
+                
+                <div class="column post is-4">
+                  <article class="columns is-multiline">
+                    <div class="column is-12 post-img">
+                      <img src="../../assets/img/flash.png" alt="Featured Image">
+                    </div>
+                    <div class="column is-12 featured-content ">
+                      <h3 class="heading post-category">HTML, JavaScript, Phaser, CSS</h3>
+                      <h1 class="title post-title has-text-white">Webpage Game</h1>
+                      <p class="post-excerpt">
+                      Implementation for a turn-based board game. 
+                      <br>
+                      Included lobby, in-game chat, established the game logic for two game modes. 
+
+                      </p>
+                      <!-- <br>
+                      <a href="#" class="button is-info">Read More</a> -->
+                    </div>
+                  </article>
+                </div>
+
+
+
+
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+  </section>
+<!-- </section> -->
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  document.querySelector('video').playbackRate = 3;
+</script>
+<!-- 
+
+<app-open-close></app-open-close>
+<app-open-close></app-open-close>
+<app-open-close></app-open-close>
+<app-open-close></app-open-close> -->
